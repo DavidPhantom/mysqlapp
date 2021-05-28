@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление пользователя</title>
+    <meta charset="utf-8" />
+    <style>
+        a:link { text-decoration: none; }
+        a:visited { text-decoration: none; }
+        a:active { text-decoration: none; }
+        a:hover {
+            font-weight: bold;
+            color: darkgreen;
+            text-decoration: underline;
+        }
+        .field{width:180px;}
+    </style>
+</head>
+<body>
+<h1>Добавление пользователя</h1>
+<form method="POST">
+    <label><strong>Имя</strong></label><br>
+    <input name="name" class="field"/><br><br>
+    <label><strong>Возраст</strong></label><br>
+    <input name="age" type="number" class="field" min="1" max="110" /><br><br>
+    <input type="submit" value="Отправить" style="color: darkgreen"/>
+</form>
+<br>
+<a href="/">К списку пользователей</a>
+</body>
+<html>

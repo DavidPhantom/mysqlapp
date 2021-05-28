@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <style>
+        a:link { text-decoration: none; }
+        a:visited { text-decoration: none; }
+        a:active { text-decoration: none; }
+        a:hover {
+            font-weight: bold;
+            color: darkgreen;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Список пользователей</h1>
+<p><a href="/create">Добавить пользователя</a></p>
+<table border="1">
+    <thead align="center">
+    <tr>
+        <th><strong>Имя</strong></th>
+        <th><strong>Возраст</strong></th>
+        <th><strong>Настройки</strong></th>
+    </tr>
+    </thead>
+    <thead align="center">
+    {{#each users}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.age}}</td>
+            <td>
+                <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                    <input type="submit" value="Изменить" style="color: cornflowerblue"/>
+                </form>|
+                <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                    <input type="submit" value="Удалить" style="color: darkred"/>
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+    </thead>
+</table>
+</body>
+<html>
